@@ -1,22 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import BKK from './BKK'
+
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Register from './Pages/auth/Register'
+import Login from './Pages/auth/Login'
+import AddBlog from './Pages/blog/AddBlog'
+import Home from './Pages/blog/Home'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      <h1 className='bg-red-500'>this is bibek</h1>
-      <BKK />
+        <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/addblog" element={<AddBlog/>}/>
+        </Routes>
+        </BrowserRouter>
     </>
   )
 }
