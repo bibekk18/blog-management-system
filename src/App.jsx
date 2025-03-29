@@ -6,12 +6,13 @@ import AddBlog from './Pages/blog/AddBlog'
 import Home from './Pages/blog/Home'
 import EditBlog from './Pages/blog/EditBlog'
 import SingleBlock from './Pages/blog/SingleBlock'
-
+import {Provider} from 'react-redux'
+import store from '../store/store'
 function App() {
   
 
   return (
-    <>
+    <Provider store ={store}>
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -22,7 +23,7 @@ function App() {
           <Route path="/blog/:id" element={<SingleBlock/>}/>
         </Routes>
         </BrowserRouter>
-    </>
+    </Provider>
   )
 }
 
